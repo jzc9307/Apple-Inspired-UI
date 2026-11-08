@@ -1,0 +1,12 @@
+{
+  "source_project": "ArbiSwarm",
+  "source_revision": "b89d2593b93ce0e4c7dbdfc025ddbaa4665c8ad0",
+  "new_experiment_date": "2026-11-09",
+  "unchanged_reused_files": [
+    {
+      "file": "vendor/filter-state.js",
+      "source_file": "static/chat-state.js",
+      "sha256": "6f7e188da0c82d36f3f333622fc77fbbc7735306e9fa4228a9bb54abdafe5295"
+    }
+  ]
+}

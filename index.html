@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="An independent Apple-inspired UI and motion study. Interactive components, built with plain HTML, CSS and JavaScript.">
+  <title>Shelf UI Lab — Apple-inspired interaction study</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='11' fill='%231d1d1f'/%3E%3Cpath d='M11 12h18M11 20h13M11 28h18' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="static/lab.css">
+  <link rel="stylesheet" href="static/motion.css">
+</head>
+<body class="ui-study">
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Shelf UI Lab home"><span class="study-mark" aria-hidden="true"><i></i><i></i><i></i></span>Shelf UI Lab</a>
+    <nav class="page-nav" aria-label="Page sections">
+      <a href="#components">Components</a><a href="#collection">Collection</a>
+      <button class="icon-button" id="open-settings" aria-label="Open appearance settings"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 17h16M9 4v6m6 4v6"/></svg></button>
+    </nav>
+  </header>
+  <main id="top">
+    <section class="intro section-wrap">
+      <div class="intro-copy">
+        <span class="study-kicker"><span></span> AN APPLE-INSPIRED INTERFACE STUDY</span>
+        <h1>Small details.<br><span>A better feeling.</span></h1>
+        <p>Buttons that respond. Controls that glide.<br>A little motion, with a reason for being there.</p>
+        <div class="intro-actions">
+          <a class="action blue" href="#components">Explore the controls <span aria-hidden="true">↗</span></a>
+          <button class="text-action" data-open="preview-dialog">Try the preview <span aria-hidden="true">›</span></button>
+        </div>
+        <div class="intro-meta"><span class="tiny-dot"></span> HTML, CSS & JavaScript. No framework required.</div>
+      </div>
+      <div class="product-scene" id="product-stage" data-finish="blue">
+        <div class="scene-orbit" aria-hidden="true"></div>
+        <div class="product-preview">
+          <div class="preview-topline"><span class="preview-dot"></span> Cobalt / over-ear</div>
+          <div class="headphone-art" aria-hidden="true">
+            <svg viewBox="0 0 300 280"><defs><linearGradient id="headband" x1="0" x2="1"><stop stop-color="var(--object-dark)"/><stop offset=".45" stop-color="var(--object-light)"/><stop offset="1" stop-color="var(--object-dark)"/></linearGradient><linearGradient id="earcup" x1="0" x2="1"><stop stop-color="var(--object-light)"/><stop offset="1" stop-color="var(--object-dark)"/></linearGradient></defs><ellipse cx="150" cy="257" rx="78" ry="10" fill="#000" opacity=".07"/><path d="M65 158v-42C65 22 235 22 235 116v42" fill="none" stroke="url(#headband)" stroke-width="23" stroke-linecap="round"/><path d="M73 124C73 35 227 35 227 124" fill="none" stroke="var(--object-pale)" stroke-width="7" opacity=".9"/><g transform="rotate(-8 72 177)"><rect x="42" y="133" width="57" height="101" rx="26" fill="url(#earcup)"/><rect x="78" y="143" width="19" height="83" rx="9" fill="var(--object-dark)"/><path d="M53 155v55" stroke="#fff" opacity=".2" stroke-width="3" stroke-linecap="round"/></g><g transform="rotate(8 228 177)"><rect x="201" y="133" width="57" height="101" rx="26" fill="url(#earcup)"/><rect x="202" y="143" width="19" height="83" rx="9" fill="var(--object-dark)"/><path d="M248 155v55" stroke="#fff" opacity=".2" stroke-width="3" stroke-linecap="round"/></g></svg>
+          </div>
+          <div class="preview-copy"><span>Fictional product. Real interactions.</span><h2>Find your quiet.</h2></div>
+          <div class="preview-bottom"><div class="finish-picker" role="radiogroup" aria-label="Product finish"><button type="button" role="radio" aria-label="Blue finish" aria-checked="true" data-finish="blue" class="finish blue-finish"></button><button type="button" role="radio" aria-label="Graphite finish" aria-checked="false" data-finish="graphite" class="finish graphite-finish"></button><button type="button" role="radio" aria-label="Starlight finish" aria-checked="false" data-finish="starlight" class="finish starlight-finish"></button></div><button class="round-action" data-open="preview-dialog" aria-label="Explore Cobalt preview">↗</button></div>
+        </div>
+        <div class="floating-note"><span class="note-icon" aria-hidden="true">↔</span><div><strong>Made to respond.</strong><span>Try a different finish.</span></div><span class="note-check" aria-hidden="true">✓</span></div>
+      </div>
+    </section>
+
+    <section class="component-section section-wrap" id="components">
+      <div class="section-heading"><div><span class="study-kicker">THE INTERACTION LIBRARY</span><h2>Looks good.<br>Feels considered.</h2></div><p>Click through the details. Every control below works locally, without a service or API.</p></div>
+      <div class="component-tabs" role="tablist" aria-label="Component groups">
+        <span class="tab-indicator" aria-hidden="true"></span>
+        <button role="tab" id="tab-buttons" aria-controls="panel-buttons" aria-selected="true" data-panel="buttons">Buttons</button>
+        <button role="tab" id="tab-controls" aria-controls="panel-controls" aria-selected="false" tabindex="-1" data-panel="controls">Controls</button>
+        <button role="tab" id="tab-overlays" aria-controls="panel-overlays" aria-selected="false" tabindex="-1" data-panel="overlays">Overlays</button>
+      </div>
+      <section class="component-panel" id="panel-buttons" role="tabpanel" aria-labelledby="tab-buttons">
+        <div class="demo-grid">
+          <article class="demo-tile button-tile"><div class="tile-label"><span>01 / BUTTON FEEDBACK</span><span>Hover · press</span></div><div class="button-playground"><button class="action blue" id="save-demo"><span class="button-label">Save your favourite</span><span class="button-glyph" aria-hidden="true">+</span></button><button class="action subtle" data-toast="A quiet secondary action. Same clear response.">A softer option <span aria-hidden="true">↗</span></button><button class="text-action" data-toast="Text actions keep the interface light.">Keep it simple <span aria-hidden="true">›</span></button></div><p>Clear hierarchy. A gentle lift on hover. A short, definite press.</p></article>
+          <article class="demo-tile"><div class="tile-label"><span>02 / A COMPLETE ACTION</span><span>Ready → working → done</span></div><div class="action-demo"><div class="success-orbit" id="sync-orbit" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M8 17l5 5 11-12"/></svg></div><button class="action dark" id="sync-demo"><span class="button-label">Try a local action</span><span class="button-glyph" aria-hidden="true">↗</span></button><span class="action-caption" id="sync-caption" role="status">A short simulated action. No request is sent.</span></div><p>The result belongs in the button. No guessing whether the click worked.</p></article>
+        </div>
+      </section>
+      <section class="component-panel" id="panel-controls" role="tabpanel" aria-labelledby="tab-controls" hidden>
+        <div class="demo-grid">
+          <article class="demo-tile"><div class="tile-label"><span>03 / SEGMENTED CONTROL</span><span>Slide · select</span></div><div class="density-demo"><div class="density-control" role="group" aria-label="Preview spacing"><span aria-hidden="true"></span><button aria-pressed="true" data-density="comfortable">Comfortable</button><button aria-pressed="false" data-density="compact">Compact</button></div><div class="spacing-preview" id="spacing-preview"><i></i><div><strong>A place for everything.</strong><span>Spacing follows your selection.</span></div><span class="spacing-dot"></span></div></div><p>The selection moves as one piece. The preview updates with it.</p></article>
+          <article class="demo-tile"><div class="tile-label"><span>04 / SWITCHES</span><span>State · response</span></div><div class="switch-list"><div><span><strong>Sound effects</strong><small>Visual demo only. No audio plays.</small></span><button class="switch" id="sound-switch" role="switch" aria-label="Sound effects" aria-checked="false"><span></span></button></div><div><span><strong>Reduce motion</strong><small>Keep feedback. Reduce movement.</small></span><button class="switch" id="motion-switch" role="switch" aria-label="Reduce motion" aria-checked="false"><span></span></button></div><p id="switch-status" role="status">Sound effects are off.</p></div><p>Switch states are explicit. Your system motion preference is respected.</p></article>
+        </div>
+      </section>
+      <section class="component-panel" id="panel-overlays" role="tabpanel" aria-labelledby="tab-overlays" hidden>
+        <div class="demo-grid">
+          <article class="demo-tile overlay-tile"><div class="tile-label"><span>05 / DIALOG & DRAWER</span><span>Open · focus · return</span></div><div class="overlay-art" aria-hidden="true"><span></span><span></span><span></span></div><div class="overlay-actions"><button class="action dark" data-open="preview-dialog">Open a dialog <span aria-hidden="true">↗</span></button><button class="text-action" data-open="settings-dialog">Open the drawer ›</button></div><p>A soft entrance, a clear close and focus returned to the trigger.</p></article>
+          <article class="demo-tile toast-tile"><div class="tile-label"><span>06 / SMALL CONFIRMATIONS</span><span>Appear · acknowledge</span></div><div class="toast-preview" aria-hidden="true"><span>✓</span><div><strong>Right where you left it.</strong><small>A little reassurance, without the interruption.</small></div></div><button class="action subtle" data-toast="Saved to this local UI study. No account or cloud service is involved.">Show a notification <span aria-hidden="true">↗</span></button><p>Confirmation stays close to the action, then quietly gets out of the way.</p></article>
+        </div>
+      </section>
+      <div class="motion-footnote"><span class="motion-dot"></span><span>Short transitions. Visible focus. Reduced-motion support.</span><button class="text-action small" id="replay-intro">Replay the entrance ↻</button></div>
+    </section>
+
+    <section class="collection-section section-wrap" id="collection">
+      <div class="section-heading"><div><span class="study-kicker">PUTTING IT TOGETHER</span><h2>One small collection.<br>The same attention.</h2></div><p>Search, sort and save. A complete interface using six fictional products, with no backend required.</p></div>
+      <div class="collection-nav"><nav aria-label="Catalog views"><button id="browse" class="active" aria-pressed="true">Browse</button><button id="saved" aria-pressed="false">Saved <span id="savedCount">0</span></button></nav><span>Local catalog · RM</span></div>
+      <form id="filters" class="controls">
+        <label class="grow">Search the catalog<input id="query" type="search" placeholder="Try headphones or camera"></label>
+        <label>Collection<select id="market"><option value="">All collections</option><option value="studio">Studio</option><option value="daily">Daily</option><option value="weekend">Weekend</option></select></label>
+        <label>Maximum price RM<input id="budget" type="number" min="0" step="1" placeholder="No limit"></label>
+        <label>Sort by<select id="sort"><option value="featured">Featured</option><option value="price-low">Lowest price</option><option value="price-high">Highest price</option></select></label>
+        <button class="secondary" type="reset">Reset filters</button>
+      </form>
+      <div class="toolbar"><h3 id="heading">The collection</h3><span id="count" class="muted" role="status"></span></div>
+      <p id="status" class="status" role="status" aria-live="polite"></p>
+      <div id="catalog" class="grid"></div>
+      <section id="empty" class="empty" hidden><h3>Nothing on this shelf yet.</h3><p class="muted">Try another filter, or save an item from Browse.</p></section>
+      <p class="notice">Illustrative products and prices. Saved items stay in this browser. No checkout, account or live product service.</p>
+    </section>
+    <section class="closing-note section-wrap"><span class="study-kicker">DESIGNED TO BE UNDERSTOOD</span><h2>Motion is feedback.<br><span>Not decoration.</span></h2><p>An independent Apple-inspired study. Original demo code and illustrations;<br>no Apple assets or official Apple components are included.</p><a class="text-action" href="#top">Back to the details ↑</a></section>
+  </main>
+  <footer class="study-footer"><span>Shelf UI Lab / Interface & motion study</span><span>Independent experiment · Source and reuse details in NOTICE.md</span></footer>
+
+  <dialog id="preview-dialog" class="study-dialog" aria-labelledby="preview-title">
+    <button class="dialog-close icon-button" data-close aria-label="Close product preview">×</button>
+    <div class="dialog-product" aria-hidden="true"><svg viewBox="0 0 100 100"><path d="M22 57V43a28 28 0 0 1 56 0v14" fill="none" stroke="currentColor" stroke-width="7"/><rect x="15" y="49" width="18" height="32" rx="9" fill="currentColor"/><rect x="67" y="49" width="18" height="32" rx="9" fill="currentColor"/></svg></div>
+    <div class="dialog-content"><span class="study-kicker">COBALT / FICTIONAL PRODUCT PREVIEW</span><h2 id="preview-title">A moment of quiet.</h2><p>This preview demonstrates a focused dialog. Press Escape, use the close button or click outside to return to where you were.</p><button class="action blue" id="dialog-save">Save Cobalt to your shelf <span aria-hidden="true">+</span></button><small>Uses this browser’s local storage. No purchase is made.</small></div>
+  </dialog>
+
+  <dialog id="settings-dialog" class="study-dialog drawer" aria-labelledby="settings-title">
+    <button class="dialog-close icon-button" data-close aria-label="Close appearance settings">×</button>
+    <div class="drawer-content"><span class="study-kicker">MAKE YOURSELF AT HOME</span><h2 id="settings-title">A little more you.</h2><p>Change the preview’s finish and the way this study moves.</p><label>Product finish<select id="drawer-finish"><option value="blue">Blue</option><option value="graphite">Graphite</option><option value="starlight">Starlight</option></select></label><div class="drawer-setting"><span><strong>Reduce motion</strong><small>Your system preference also applies.</small></span><button class="switch" id="drawer-motion" role="switch" aria-label="Reduce motion in appearance settings" aria-checked="false"><span></span></button></div><div class="drawer-info"><span aria-hidden="true">↗</span><p>These settings apply to this local page. They do not change your device or any external account.</p></div><button class="action blue" data-close>Done <span aria-hidden="true">✓</span></button></div>
+  </dialog>
+
+  <div class="live-toast" id="live-toast" hidden><span class="toast-check" aria-hidden="true">✓</span><p role="status" id="toast-message"></p><button class="icon-button" id="close-toast" aria-label="Dismiss notification">×</button></div>
+  <script src="vendor/filter-state.js"></script>
+  <script src="static/catalog-state.js"></script>
+  <script src="static/catalog.js"></script>
+  <script src="static/select-menu.js"></script>
+  <script src="static/motion.js"></script>
+</body>
+</html>
+
