@@ -96,9 +96,4 @@ The four Node tests cover catalog selection, not visual quality or animation
 timing. Component interactions, modal focus, catalog saves and narrow-screen
 layout should also be checked in a browser when changing this interface.
 
-## Origin
-
-This is a new standalone experiment, not evidence of an older project or
-hackathon entry. The reusable filtering helper retains its original attribution.
-See [NOTICE.md](NOTICE.md) and `REUSE_MANIFEST.json`.
 
