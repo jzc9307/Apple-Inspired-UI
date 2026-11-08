@@ -4,11 +4,6 @@ An independent frontend experiment exploring Apple-inspired visual hierarchy,
 button feedback and purposeful transitions. The page is a working component
 library with a small fictional catalog, built with plain HTML, CSS and JavaScript.
 
-This is an original implementation of that design direction. It includes no
-Apple logos, product photography, official components or copied Apple source.
-It does not reproduce every Apple interaction. Source reuse and AI assistance
-are documented separately in [NOTICE.md](NOTICE.md).
-
 ## Run
 
 No package installation or API key is needed:
